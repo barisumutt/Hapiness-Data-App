@@ -10,7 +10,6 @@ option_y = st.selectbox("Select the data for the Y-axis",
 
 df = pd.read_csv("happy.csv")
 
-x_array = None
 match option_x:
     case "Happiness":
         x_array = df["happiness"]
@@ -19,7 +18,6 @@ match option_x:
     case "Generosity":
         x_array = df["generosity"]
 
-y_array = None
 match option_y:
     case "Happiness":
         y_array = df["happiness"]
