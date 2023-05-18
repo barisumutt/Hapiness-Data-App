@@ -2,28 +2,33 @@ import streamlit as st
 import plotly.express as px
 import pandas as pd
 
+st.title("In Search for Happiness")
+option_x = st.selectbox("Select the data for the X-axis",
+                      ("GDP", "Happiness", "Generosity"))
+option_y = st.selectbox("Select the data for the Y-axis",
+                      ("GDP", "Happiness", "Generosity"))
+
 df = pd.read_csv("happy.csv")
 
-columns = (df.columns[1], df.columns[2], df.columns[6])
+x_array = None
+match option_x:
+    case "Happiness":
+        x_array = df["happiness"]
+    case "GDP":
+        x_array = df["gdp"]
+    case "Generosity":
+        x_array = df["generosity"]
 
-st.title("In Search for Hapiness")
-x_axis = st.selectbox("Select the data for the X-axis",
-             (columns))
-x_axis = x_axis
-y_axis = st.selectbox("Select the data for the Y-axis",
-             (columns))
-y_axis =y_axis
-st.subheader(f"{x_axis} and {y_axis}")
+y_array = None
+match option_y:
+    case "Happiness":
+        y_array = df["happiness"]
+    case "GDP":
+        y_array = df["gdp"]
+    case "Generosity":
+        y_array = df["generosity"]
 
-def get_data(data_x0, data_y0):
-    data_x1 = df[f"{data_x0}"]
-    data_y1 = df[f"{data_y0}"]
-    return data_x1,data_y1
+st.subheader(f"{option_x} and {option_y}")
 
-x, y = get_data(x_axis, y_axis)
-
-
-
-figure = px.scatter(x=x, y=y, labels={"x": x_axis, "y":y_axis})
-st.plotly_chart(figure)
-
+figure1 = px.scatter(x=x_array, y=y_array, labels={"x": option_x, "y": option_y})
+st.plotly_chart(figure1)
