@@ -1,4 +1,4 @@
-# Project Name
+# Hapiness Data App
 The project "In Search for Happiness" is a Streamlit application that visualizes data related to happiness, GDP, and generosity. It utilizes the Streamlit framework, plotly.express library, and pandas library to create interactive scatter plots based on user-selected data.
 
 ## Prerequisites
