@@ -27,6 +27,6 @@ streamlit run app.py
 5. Explore different combinations of X-axis and Y-axis data to gain insights into the relationship between happiness, GDP, and generosity.
 
 ## Contact
-If you have any questions or suggestions regarding this project, please feel free to contact Barış Umut Baykal at <ins>barisumutbaykal@gmail.com</ins>.
+If you have any questions or suggestions regarding this project, please feel free to contact Barış Umut Baykal at barisumutbaykal@gmail.com.
 
 Enjoy exploring the data and discovering the factors influencing happiness!
